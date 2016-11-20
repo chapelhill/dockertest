@@ -4,9 +4,6 @@ ADD target/dropwizard-example-1.1.0-SNAPSHOT.jar /data/dropwizard-example-1.1.0-
 
 ADD example.yml /data/example.yml
 
-RUN mkdir /myvol
-VOLUME /myvol
-
 RUN ["java", "-jar", "/data/dropwizard-example-1.1.0-SNAPSHOT.jar", "db", "migrate", "/data/example.yml"]
 
 USER 1001
